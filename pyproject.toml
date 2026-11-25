@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "self-healing-lab"
+version = "0.1.0"
+description = "A simulated lab cell that recovers from its own failures"
+requires-python = ">=3.12"
+dependencies = [
+    "pylabrobot==0.2.2",
+    "anthropic==2.14.0",
+    "pydantic==2.14.4",
+]
+
+[project.optional-dependencies]
+test = ["pytest==9.2.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
